@@ -5,10 +5,10 @@
 }
 
 :root {
-  --primary-color: dodgerblue;
+  --primary-color: rgb(17, 217, 187);
   --select-color: dodgerblue;
-  --success: rgb(15, 158, 2);
-  --danger: rgb(214, 23, 23);
+  --success: rgb(30, 174, 88);
+  --danger: rgb(192, 17, 17);
 }
 
 body {
@@ -96,7 +96,7 @@ label {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   max-width: fit-content;
 }
 

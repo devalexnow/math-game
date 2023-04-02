@@ -15,12 +15,12 @@
         </div>
 
          <!-- Splash page -->
-        <div class="card" id="splash-page" >
+        <div class="card" id="splash-page">
             <form id="start-form">
                 <div class="selection-container">
                     <!-- 10 Question Radio Input -->
                     <div class="radio-container">
-                        <label for="value-10">10 Questions</label> <!--for element musi zgadzać się z id w label-->
+                        <label for="value-10">10 Zadań</label> <!--for element musi zgadzać się z id w label-->
                         <input type="radio" name="questions" value="10" id="value-10">
                         <span class="best-score">
                             <span>Najlepszy wynik </span>
@@ -29,7 +29,7 @@
                     </div>
                     <!-- 25 Question Radio Input -->
                     <div class="radio-container">
-                        <label for="value-25">25 Questions</label> <!--for element musi zgadzać się z id w label-->
+                        <label for="value-25">25 Zadań</label> <!--for element musi zgadzać się z id w label-->
                         <input type="radio" name="questions" value="25" id="value-25">
                         <span class="best-score">
                             <span>Najlepszy wynik </span>
@@ -38,7 +38,7 @@
                     </div>
                     <!-- 50 Question Radio Input -->
                     <div class="radio-container">
-                        <label for="value-50">50 Questions</label> <!--for element musi zgadzać się z id w label-->
+                        <label for="value-50">50 Zadań</label> <!--for element musi zgadzać się z id w label-->
                         <input type="radio" name="questions" value="50" id="value-50">
                         <span class="best-score">
                             <span>Najlepszy wynik </span>
@@ -47,7 +47,7 @@
                     </div>
                     <!-- 99 Question Radio Input -->
                     <div class="radio-container">
-                        <label for="value-99">99 Questions</label> <!--for element musi zgadzać się z id w label-->
+                        <label for="value-99">99 Zadań</label> <!--for element musi zgadzać się z id w label-->
                         <input type="radio" name="questions" value="99" id="value-99">
                         <span class="best-score">
                             <span>Najlepszy wynik </span>
@@ -65,6 +65,32 @@
         <!-- Countdown Page -->
         <div class="card" id="countdown-page" hidden>
             <h1 class="countdown">3</h1>
+        </div>
+
+        <!-- Game page -->
+        <div class="card" id="game-page" hidden>
+            <!-- Item container -->
+            <div class="item-container"></div>
+             <!-- Right/wrong buttons -->
+            <div class="item-footer">
+                <button class="wrong">źle</button>
+                <button class="right">dobrze</button>
+            </div>
+        </div>
+       
+        <!-- Score page -->
+        <div class="card" id="score-page" hidden>
+            <!-- Score Container -->
+            <div class="score-container">
+                <h1 class="title">Twój czas</h1>
+                <h1 class="final-time">3.4s</h1>
+                <h1 class="base-time">czas bazowy: 2.4s</h1>
+                <h1 class="penalty-time">Kara: +1.0s</h1>
+            </div>
+            <!-- Paly again button -->
+            <div class="score-footer">
+                <button class="play-again">Zagraj ponownie</button>
+            </div>
         </div>
 
     </div>

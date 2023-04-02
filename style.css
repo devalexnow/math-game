@@ -6,7 +6,7 @@
 
 :root {
   --primary-color: rgb(17, 217, 187);
-  --select-color: dodgerblue;
+  --select-color: rgb(12, 184, 159);
   --success: rgb(30, 174, 88);
   --danger: rgb(192, 17, 17);
 }

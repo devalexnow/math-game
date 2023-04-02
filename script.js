@@ -83,6 +83,31 @@ function createEquations() {
 //   itemContainer.appendChild(bottomSpacer);
 // }
 
+// Dispaly 3, 2, 1, Start!
+function countdownStart() {
+  countdown.textContent = '3';
+  setTimeout(() => {
+    countdown.textContent = '2';
+  }, 1000);
+  setTimeout(() => {
+    countdown.textContent = '1';
+  }, 2000);
+  setTimeout(() => {
+    countdown.textContent = 'Start!';
+  }, 3000);
+}
+
+// Navigate from splash page to countdown page
+function showCountdown() {
+  if (questionAmount) {
+  countdownPage.hidden = false;
+  splashPage.hidden = true;
+  countdownStart();
+  } else {
+    alert('wybierz liczbę zadań');
+  }
+}
+
 // Get the value from selected radio button
 function getRadioValue() {
   let radioValue;
@@ -99,6 +124,7 @@ function selectQuestionAmount(e) {
   e.preventDefault();
   questionAmount = getRadioValue();
   console.log('question amount', questionAmount);
+  showCountdown();
 }
 
 startForm.addEventListener('click', () => {

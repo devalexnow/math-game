@@ -268,7 +268,7 @@ function populateGamePage() {
 
 // Dispaly 3, 2, 1, Start!
 function countdownStart() {
-  let count = 1;
+  let count = 3;
   countdown.textContent = count;
   const timeCountDown = setInterval(() => {
     count--;
@@ -282,6 +282,7 @@ function countdownStart() {
     }
   }, 1000);
 
+ //inny sposób na odliczanie - ale gorszy 
   // countdown.textContent = '3';
   // setTimeout(() => {
   //   countdown.textContent = '2';

@@ -40,10 +40,25 @@ let finalTimeDisplay = '0.0s';
 // Scroll
 let valueY = 0;
 
+//Reset the game
+function playAgain() {
+  gamePage.addEventListener('click', startTimer);
+  scorePage.hidden = true;
+  splashPage.hidden = false;
+  equationsArray = [];
+  playerGuessArray = [];
+  valueY = 0;
+  playAgainBtn.hidden = true;
+}
+
 //Show Score Page
 function showScorePage() {
   gamePage.hidden = true;
   scorePage.hidden = false;
+  //Show play again button after 1s
+  setTimeout(() => {
+    playAgainBtn.hidden = false;
+  }, 1000);
 }
 
 //Format and dispaly time in DOM

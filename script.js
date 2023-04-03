@@ -30,13 +30,54 @@ let equationObject = {};
 const wrongFormat = [];
 
 // Time
+let timer;
+let timePlayed = 0;
+let baseTime = 0;
+let penaltyTime = 0;
+let finalTime = 0;
+let finalTimeDisplay = '0.0s';
 
 // Scroll
 let valueY = 0;
 
+//Stop timer, process results, go to score page
+function checkTime() {
+  console.log(timePlayed);
+  if (playerGuessArray.length == questionAmount) {
+    console.log('player guess array', playerGuessArray);
+    clearInterval(timer);
+    // loop thru equations array and check for wrong guesses and penalty time
+    equationsArray.forEach((equation, index) => {
+      if (equation.evaluated === playerGuessArray[index]) {
+        // correct guess, no penalty
+      } else {
+        //incorrect answer
+        penaltyTime += 0.5;
+      }
+    });
+    finalTime = timePlayed + penaltyTime;
+    console.log("time", timePlayed, 'penalty', penaltyTime, 'final', finalTime);
+  }
+}
+
+//Add a tenth of a second to timePlayed
+function addTime() {
+ timePlayed += 0.1; 
+ checkTime();
+}
+
+//Start timer when game page is clicked
+function startTimer() {
+  //Reset times
+  timePlayed =0;
+  penaltyTime = 0;
+  finalTime = 0;
+  timer = setInterval(addTime, 100);
+  gamePage.removeEventListener('click', startTimer);
+}
+
 //Scroll, store user selection in playerGuessArray
 function select(guessedTrue) {
-  console.log('player guess array', playerGuessArray);
   //Scroll 80 pixels
   valueY +=80; // przesunie "podświetlenie" na kolejne równanie, czyli o 80 pixeli
   itemContainer.scroll(0, valueY);
@@ -70,7 +111,6 @@ function shuffle(array) {
     [array[currentIndex], array[randomIndex]] = [
       array[randomIndex], array[currentIndex]];
   }
-
   return array;
 }
 
@@ -205,3 +245,4 @@ startForm.addEventListener('click', () => {
 
 // Event listeners
 startForm.addEventListener('submit', selectQuestionAmount);
+gamePage.addEventListener('click', startTimer);

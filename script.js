@@ -21,6 +21,7 @@ const playAgainBtn = document.querySelector('.play-again');
 // Equations
 let questionAmount = 0;
 let equationsArray = [];
+let playerGuessArray = [];
 
 // Game Page
 let firstNumber = 0;
@@ -31,6 +32,17 @@ const wrongFormat = [];
 // Time
 
 // Scroll
+let valueY = 0;
+
+//Scroll, store user selection in playerGuessArray
+function select(guessedTrue) {
+  console.log('player guess array', playerGuessArray);
+  //Scroll 80 pixels
+  valueY +=80; // przesunie "podświetlenie" na kolejne równanie, czyli o 80 pixeli
+  itemContainer.scroll(0, valueY);
+  //Add player guess to array
+  return guessedTrue ? playerGuessArray.push('true') : playerGuessArray.push('false'); // jeśli odpowiedź jest poprawna, doda true do szeregu, jeśli nie - doda false 
+}
 
 //Displays Game Page
 function showGamePage() {

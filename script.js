@@ -50,7 +50,7 @@ function bestScoresToDOM() {
 }
 
 //Check lokal storage for best scores, set bestScoreArray
-function getSavedBestScore() {
+function getSavedBestScores() {
   if (localStorage.getItem('bestScores')) {
     bestScoreArray = JSON.parse(localStorage.bestScores);
   } else {
@@ -68,23 +68,23 @@ function getSavedBestScore() {
 //Update best score array
 function updateBestScore() {
   bestScoreArray.forEach((score, index) => {
-    //Select correct best score to update
+    // Select correct Best Score to update
     if (questionAmount == score.questions) {
-      //Retur best score as a number with one decimal
+      // Return Best Score as number with one decimal
       const savedBestScore = Number(bestScoreArray[index].bestScore);
-      //Update if the new final score is less or replacing zero
+      // Update if the new final score is less or replacing zero
       if (savedBestScore === 0 || savedBestScore > finalTime) {
         bestScoreArray[index].bestScore = finalTimeDisplay;
       }
     }
   });
-  //update splash page
-  bestScoresToDOM();
-  //save to local storage
-  localStorage.setItem('bestScores', JSON.stringify(bestScoreArray));
-}
+   // Update Splash Page
+   bestScoresToDOM();
+   // Save to Local Storage
+   localStorage.setItem('bestScores', JSON.stringify(bestScoreArray));
+ }
 
-//Reset the game
+// Reset Game
 function playAgain() {
   gamePage.addEventListener('click', startTimer);
   scorePage.hidden = true;
@@ -97,12 +97,12 @@ function playAgain() {
 
 //Show Score Page
 function showScorePage() {
-  gamePage.hidden = true;
-  scorePage.hidden = false;
-  //Show play again button after 1s
+  // Show Play Again button after 1 second delay
   setTimeout(() => {
     playAgainBtn.hidden = false;
   }, 1000);
+  gamePage.hidden = true;
+  scorePage.hidden = false;
 }
 
 //Format and dispaly time in DOM
@@ -268,16 +268,30 @@ function populateGamePage() {
 
 // Dispaly 3, 2, 1, Start!
 function countdownStart() {
-  countdown.textContent = '3';
-  setTimeout(() => {
-    countdown.textContent = '2';
+  let count = 1;
+  countdown.textContent = count;
+  const timeCountDown = setInterval(() => {
+    count--;
+    if (count === 0) {
+      countdown.textContent = 'Start!';
+    } else if (count === -1) {
+      showGamePage();
+      clearInterval(timeCountDown);
+    } else {
+      countdown.textContent = count;
+    }
   }, 1000);
-  setTimeout(() => {
-    countdown.textContent = '1';
-  }, 2000);
-  setTimeout(() => {
-    countdown.textContent = 'Start!';
-  }, 3000);
+
+  // countdown.textContent = '3';
+  // setTimeout(() => {
+  //   countdown.textContent = '2';
+  // }, 1000);
+  // setTimeout(() => {
+  //   countdown.textContent = '1';
+  // }, 2000);
+  // setTimeout(() => {
+  //   countdown.textContent = 'Start!';
+  // }, 3000);
 }
 
 // Navigate from splash page to countdown page
@@ -285,9 +299,8 @@ function showCountdown() {
   if (questionAmount) {
   countdownPage.hidden = false;
   splashPage.hidden = true;
-  countdownStart();
   populateGamePage();
-  setTimeout(showGamePage, 400);
+  countdownStart();
   } else {
     alert('wybierz liczbę zadań');
   }
@@ -328,4 +341,4 @@ startForm.addEventListener('submit', selectQuestionAmount);
 gamePage.addEventListener('click', startTimer);
 
 //On load
-getSavedBestScore();
+getSavedBestScores();

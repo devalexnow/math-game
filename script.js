@@ -40,6 +40,23 @@ let finalTimeDisplay = '0.0s';
 // Scroll
 let valueY = 0;
 
+//Show Score Page
+function showScorePage() {
+  gamePage.hidden = true;
+  scorePage.hidden = false;
+}
+
+//Format and dispaly time in DOM
+function scoresToDOM() {
+  finalTimeDisplay = finalTime.toFixed(1); //toFixed(liczba) pozwala na określenie ile liczb po przecinku ma się pojawić
+  baseTime = timePlayed.toFixed(1);
+  penaltyTime = penaltyTime.toFixed(1);
+  baseTimeEl.textContent = `czas bazowy: ${baseTime}s`;
+  penaltyTimeEl.textContent = `Kara: +${penaltyTime}s`;
+  finalTimeEl.textContent = `${finalTimeDisplay}s`;
+  showScorePage();
+}
+
 //Stop timer, process results, go to score page
 function checkTime() {
   console.log(timePlayed);
@@ -57,6 +74,7 @@ function checkTime() {
     });
     finalTime = timePlayed + penaltyTime;
     console.log("time", timePlayed, 'penalty', penaltyTime, 'final', finalTime);
+    scoresToDOM();
   }
 }
 

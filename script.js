@@ -110,8 +110,8 @@ function scoresToDOM() {
   finalTimeDisplay = finalTime.toFixed(1); //toFixed(liczba) pozwala na określenie ile liczb po przecinku ma się pojawić
   baseTime = timePlayed.toFixed(1);
   penaltyTime = penaltyTime.toFixed(1);
-  baseTimeEl.textContent = `czas bazowy: ${baseTime}s`;
-  penaltyTimeEl.textContent = `Kara: +${penaltyTime}s`;
+  baseTimeEl.textContent = `Base time: ${baseTime}s`;
+  penaltyTimeEl.textContent = `Penalty: +${penaltyTime}s`;
   finalTimeEl.textContent = `${finalTimeDisplay}s`;
   updateBestScore();
   // Scroll to Top, go to Score Page
@@ -273,7 +273,7 @@ function countdownStart() {
   const timeCountDown = setInterval(() => {
     count--;
     if (count === 0) {
-      countdown.textContent = 'Start!';
+      countdown.textContent = 'Go!';
     } else if (count === -1) {
       showGamePage();
       clearInterval(timeCountDown);

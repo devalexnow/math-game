@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gra Sprint Math</title>
+    <title>Sprint Math Game</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -20,37 +20,37 @@
                 <div class="selection-container">
                     <!-- 10 Question Radio Input -->
                     <div class="radio-container">
-                        <label for="value-10">10 Zadań</label> <!--for element musi zgadzać się z id w label-->
+                        <label for="value-10">10 Questions</label> <!--for element musi zgadzać się z id w label-->
                         <input type="radio" name="questions" value="10" id="value-10">
                         <span class="best-score">
-                            <span>Najlepszy wynik </span>
+                            <span>Best score</span>
                             <span class="best-score-value"></span>
                         </span>
                     </div>
                     <!-- 25 Question Radio Input -->
                     <div class="radio-container">
-                        <label for="value-25">25 Zadań</label> <!--for element musi zgadzać się z id w label-->
+                        <label for="value-25">25 Questions</label> <!--for element musi zgadzać się z id w label-->
                         <input type="radio" name="questions" value="25" id="value-25">
                         <span class="best-score">
-                            <span>Najlepszy wynik </span>
+                            <span>Best score</span>
                             <span class="best-score-value"></span>
                         </span>
                     </div>
                     <!-- 50 Question Radio Input -->
                     <div class="radio-container">
-                        <label for="value-50">50 Zadań</label> <!--for element musi zgadzać się z id w label-->
+                        <label for="value-50">50 Questions</label> <!--for element musi zgadzać się z id w label-->
                         <input type="radio" name="questions" value="50" id="value-50">
                         <span class="best-score">
-                            <span>Najlepszy wynik </span>
+                            <span>Best score</span>
                             <span class="best-score-value"></span>
                         </span>
                     </div>
                     <!-- 99 Question Radio Input -->
                     <div class="radio-container">
-                        <label for="value-99">99 Zadań</label> <!--for element musi zgadzać się z id w label-->
+                        <label for="value-99">99 Questions</label> <!--for element musi zgadzać się z id w label-->
                         <input type="radio" name="questions" value="99" id="value-99">
                         <span class="best-score">
-                            <span>Najlepszy wynik </span>
+                            <span>Best score</span>
                             <span class="best-score-value"></span>
                         </span>
                     </div>
@@ -73,8 +73,8 @@
             <div class="item-container"></div>
              <!-- Right/wrong buttons -->
             <div class="item-footer">
-                <button class="wrong" onclick="select(false)">źle</button>
-                <button class="right" onclick="select(true)">dobrze</button>
+                <button class="wrong" onclick="select(false)">wrong</button>
+                <button class="right" onclick="select(true)">right</button>
             </div>
         </div>
        
@@ -82,14 +82,14 @@
         <div class="card" id="score-page" hidden>
             <!-- Score Container -->
             <div class="score-container">
-                <h1 class="title">Twój czas</h1>
+                <h1 class="title">Your time</h1>
                 <h1 class="final-time"></h1>
                 <h1 class="base-time"></h1>
                 <h1 class="penalty-time"></h1>
             </div>
             <!-- Play again button -->
             <div class="score-footer">
-                <button class="play-again" onclick="playAgain()" hidden>Zagraj ponownie</button>
+                <button class="play-again" onclick="playAgain()" hidden>Play again</button>
             </div>
         </div>
     </div>

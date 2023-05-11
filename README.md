@@ -7,7 +7,7 @@ The project involves:
 1. **Timing events** (countdown),
 2. **Random** correct and incorrect multiplication **equations**,
 3. **Random ratio** of correct and incorrect answers,
-4. **Three different** views within the game container: 
+4. **Three different views** within the game container: 
     - the splash page, 
     - the game page, 
     - the score page,

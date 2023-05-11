@@ -178,7 +178,7 @@ function getRandomInt(max) {
 
 //Shuffle array
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
+  let currentIndex = array.length, randomIndex;
 
   // While there remain elements to shuffle.
   while (currentIndex != 0) {
@@ -266,7 +266,7 @@ function populateGamePage() {
   itemContainer.appendChild(bottomSpacer);
 }
 
-// Dispaly 3, 2, 1, Start!
+// Dispaly 3, 2, 1, Go!
 function countdownStart() {
   let count = 3;
   countdown.textContent = count;
@@ -303,7 +303,7 @@ function showCountdown() {
   populateGamePage();
   countdownStart();
   } else {
-    alert('wybierz liczbę zadań');
+    alert('select the number of questions');
   }
 }
 
